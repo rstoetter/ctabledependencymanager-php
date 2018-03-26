@@ -12,21 +12,23 @@ The class \\rstoetter\\ctabledependencymanager\\cTableDependencyManager keeps al
 
 ## dependency paths
 
-Such a dependency path could be the following:
+Such a dependency path could be the following one:
 
 TST_AUF_ITP_Stichwort_CLIENT_CLIENT -> TST_AUF_ITP_Stichwort_CLIENT -> TST_AUF_ITP_Stichwort -> TST_AUF_ITP_Stichwort -> ITP_Stichwort -> ITP_Zeitraum -> Klient -> Auswahl -> AuswahlTyp -> BUCHUNGSKREIS -> MANDANT
 
 * Here the source table TST_AUF_ITP_Stichwort_CLIENT_CLIENT depends on the table MANDANT ( the target table, the last one) 
 * all the tables mentioned before MANDANT refer to MANDANT in a certain way, too - in the given dependency order from right to left
-* the dependency path shows, how the tables are connected in the database with FOREIGN kEYs
+* the dependency path shows, how the tables are connected in the database with FOREIGN KEYs
 * The table TST_AUF_ITP_Stichwort is a self referencing table, therefore it is mentioned twice in the dependency path
 
 ## How can I use it?
 
 For example, if we want to do a cascading delete in the database and want to delete a record from the table MANDANT, then we have to
 delete the dependencies in the database, which refer to the table MANDANT in any way.
+
 First we have to delete affected records from TST_AUF_ITP_Stichwort_CLIENT_CLIENT, then from TST_AUF_ITP_Stichwort_CLIENT, then from
-TST_AUF_ITP_Stichwort and so on, until we can delete the record in MANDANT without offending a constraint in the database
+TST_AUF_ITP_Stichwort and so on, until we can delete the record in MANDANT without offending a constraint in the database.
+
 The class cTableDependencyManager checks the whole database for the constraints between the tables and solves the order of the cascading delete.
 
 It is a powerful weapon in order to ease the burden to keep track of all dependencies in your database. 

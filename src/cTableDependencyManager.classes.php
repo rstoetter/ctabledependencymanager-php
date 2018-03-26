@@ -680,7 +680,7 @@ class cTableDependencyManager {
     
     
     public function & GetTreeObject( ) : \rstoetter\ckeycolumnusagetree\cKeyColumnUsageTree {
-        return $this->m_obj_cKeyColumnUsageTree;
+        return $this->m_obj_key_column_usage_tree;
     }   // function GetTreeObject( )
 
     
@@ -754,26 +754,6 @@ class cTableDependencyManager {
     
     }   // function GetDependencyCount( )
     
-    
-    /**
-      *
-      * Returns an array with the table names referring to $this->m_table_name
-      *
-      * @param array $ary the array which should be filled with the referencing table names 
-      *
-      */       
-    
-    
-    public function GetAllReferencingTables( array & $ary ) {
-    
-            $ary = array( );
-    
-            foreach ( $this->m_a_entries as $obj_table_reference ) {
-                $ary[] = $obj_table_reference->m_table_name;
-            }
-
-    
-    }   // function GetAllReferencingTables( )
     
     
 
