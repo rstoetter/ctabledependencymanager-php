@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "rstoetter\\ctabledependencymanager-php\\": "src"
+            "rstoetter\\ctabledependencymanager\\": "src"
         }
     }
 }
