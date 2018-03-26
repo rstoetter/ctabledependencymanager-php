@@ -443,11 +443,11 @@ class cTableDependency {
       *
       */       
     
-    
+/* superflous    
     public function ReferredTable( ) : string {
         return $this->m_obj_path->TargetTable( );
     }   // function ReferredTable( )
-    
+*/    
     /**
       *
       * Returns the source table - the first table in the dependency path
@@ -455,10 +455,11 @@ class cTableDependency {
       * @return string the name of the source table
       *
       */           
-    
+/* superflous    
     public function ReferingTable( ) : string {
         return $this->m_obj_path->ReferingTable( );
     }   // function ReferingTable( )    
+*/    
     
     /**
       *
@@ -469,13 +470,14 @@ class cTableDependency {
       */       
     
     
-    
+/* superflous    
     public function AddToPath( string $table_name ) {
     
         $this->m_obj_path->AddToPath( $table_name );
         $this->m_table_name = $table_name;
         
     }   // function AddToPath( )
+*/    
     
     /**
       *
@@ -487,13 +489,13 @@ class cTableDependency {
       *
       */       
 
-      
+/* superflous      
     public function PathIsPart( array & $a_path ) : bool {
     
         return $this->m_obj_path->PathIsPart( $a_path );
     
     }   // function PathIsPart( )
-    
+*/    
     
     /**
       *
@@ -503,11 +505,11 @@ class cTableDependency {
       *
       */       
     
-    
+/* superflous    
     public function GetLevel( ) : int {
         return $this->m_obj_path->GetLevel( );
     }   // function GetLevel( )
-    
+*/    
     
 
 }   // class cTableDependency
