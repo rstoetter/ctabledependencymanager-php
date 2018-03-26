@@ -410,6 +410,7 @@ class cTableDependency {
         }
         
         if ( $table_name != $a_path[ 0 ] ) {
+            var_dump( $a_path );
             die( "\n error when constructing cTableDependency - the path starts not with {$table_name}!" );
         }
         
@@ -647,7 +648,7 @@ class cTableDependencyManager {
         $this->m_obj_key_column_usage_tree->CollectAllDependencyPaths( $a_paths, $this->m_table_name );         
         
         foreach( $a_paths as $a_path ) {
-            $this->m_a_entries[] = new cTableDependency( $this->m_table_name, $a_path );
+            $this->m_a_entries[] = new cTableDependency( $a_path[ 0 ], $a_path );
         }
         
         $a_paths = null;
@@ -697,15 +698,15 @@ class cTableDependencyManager {
         
         foreach( $this->m_a_entries as $obj_table_dependency) {
         
-            if ( in_array( $referrer, $obj_table_dependency->m_a_path ) ) {
-                if ( in_array( $referenced_table_name, $obj_table_dependency->m_a_path ) ) {
+            if ( in_array( $referrer, $obj_table_dependency->GetPathObject( )->m_a_path ) ) {
+                if ( in_array( $referenced_table_name, $obj_table_dependency->GetPathObject( )->m_a_path ) ) {
                 
                     $pos_referrer = 0;
                     $pos_referenced_table_name = 0;
                     
-                    for ( $i = 0; $i < count( $obj_table_dependency->m_a_path ); $i++ ) {
-                        if ( $obj_table_dependency->m_a_path[ $i ] == $referrer ) $pos_referrer = $i;
-                        if ( $obj_table_dependency->m_a_path[ $i ] == $referenced_table_name ) $pos_referenced_table_name = $i;                        
+                    for ( $i = 0; $i < count( $obj_table_dependency->GetPathObject( )->m_a_path ); $i++ ) {
+                        if ( $obj_table_dependency->GetPathObject( )->m_a_path[ $i ] == $referrer ) $pos_referrer = $i;
+                        if ( $obj_table_dependency->GetPathObject( )->m_a_path[ $i ] == $referenced_table_name ) $pos_referenced_table_name = $i;                        
                         if ( ( $pos_referrer != 0 ) && ( $pos_referenced_table_name != 0 ) ) break;
                     }
                     
