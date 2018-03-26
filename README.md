@@ -1,15 +1,14 @@
-# The repository \\rstoetter\\ctabledependencymanager
+# The repository \\rstoetter\\ctabledependencymanager-php
 
 ## description  
 
 The class cTableDependencyManager is the main class of the repository \\rstoetter\\ctabledependencymanager-php.
 
-The class cTableDependencyManager keeps the various dependencies to a certain target table. There can be lots of dependency paths to a certain table in the database. The dependencies can consist of many tables, which establish the dependency between the source table and the target table. Self-referencing tables are considered, too
-  
+The class cTableDependencyManager keeps the various dependencies to a certain target table. There can be lots of dependency paths to a certain table in the database. The dependency paths can consist of many tables, which establish the dependency between the source table and the target table. Self-referencing tables are considered, too.
+ 
 Actually merely dependencies of a mysql database are supported
-  
-  The class \\rstoetter\\ctabledependencymanager\\cTableDependencyManager keeps all dependencies of the database, which refer to a 
-  certain target table
+
+The class \\rstoetter\\ctabledependencymanager\\cTableDependencyManager keeps all dependencies of the database, which refer to a certain target table
 
 
 ## helper classes

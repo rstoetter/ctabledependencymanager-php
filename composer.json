@@ -1,0 +1,25 @@
+
+{
+    "name": "rstoetter/ctabledependencymanager-php",
+    "description": "the repository rstoetter\\ctabledependencymanager-php helps you to keep track of the various table dependencies in a mysql database. It is able to find dependencies, which last over several tables between and to find dependencies with self-referring tables",
+    "license": "MIT",
+    "keywords": ["php","sql","mysql","dependencies","dependency","tables","table","manager"],
+    "authors": [
+        {
+            "name": "Rainer Stötter",
+            "email": "rstoetter@users.sourceforge.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "rstoetter\\ctabledependencymanager-php\\": "src"
+        }
+    }
+}
+
